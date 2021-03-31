@@ -1,0 +1,10 @@
+tsconfig.tsbuildinfo
+dist
+node_modules
+.idea/*
+.nyc_output
+coverage
+*.log
+yarn.lock
+.env
+.DS_STORE

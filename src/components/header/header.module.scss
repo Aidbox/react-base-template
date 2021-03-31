@@ -1,0 +1,6 @@
+.header {
+  height: 50px;
+  width: 100%;
+  border: 1px solid $color-accent;
+  z-index: z('page-header');
+}

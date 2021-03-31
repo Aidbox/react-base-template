@@ -1,0 +1,19 @@
+.main {
+  height: 100vh;
+  width: 300px;
+  color: $color-primary-dark;
+  font-weight: bold;
+
+  @include mq($from: mobile) {
+    color: $color-accent-dark;
+  }
+
+  @include mq($from: desktop) {
+    color: $color-secondary-accent;
+  }
+
+  &__title {
+    color: $color-accent-dark;
+    font-weight: bold;
+  }
+}

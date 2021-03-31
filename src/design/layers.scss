@@ -1,0 +1,26 @@
+@function z-index($name){
+  $z: null;
+  @if type-of($z-layers) == map { $z: map-get($z-layers, $name) }
+  @if type-of($z-layers) == list {
+    @for $i from 1 through length($z-layers) {
+      @if nth($z-layers, $i) == $name { $z: $i }
+    }
+  }
+  @if $z { @return $z }
+  @else { @error('Could not find a z-index for `#{$name}`') }
+}
+
+@mixin z-index($name){ z-index: z-index($name) }
+
+// Short hands
+@function z($params...){ @return z-index($params...); }
+@mixin z($params...){ @include z-index($params...); }
+
+$z-layers:(
+  'wallpaper'       : 0,
+  'page-content'    : 100,
+  'page-footer'     : 200,
+  'page-header'     : 200,
+  'page-navigation' : 300,
+  'modal-window'    : 400,
+);
