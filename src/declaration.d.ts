@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
-
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test';
