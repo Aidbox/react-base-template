@@ -10,7 +10,7 @@ interface Props {
 export const Header: React.FC<Props> = ({ name }) => {
   return (
     <div className={css.header}>
-      text {auth} {name} 234567
+      text {auth} {name}
     </div>
   );
 };

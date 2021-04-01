@@ -25,6 +25,10 @@ const REACT_REFRESH_PLUGIN = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = () => ({
   mode: 'development',
+  devtool: 'inline-source-map',
+  entry: [
+    "./src/index.ts",
+  ],
   output: {
     filename: '[name].[contenthash].js',
     publicPath: '',
@@ -57,19 +61,12 @@ module.exports = () => ({
         test: /\.(ts|tsx|js|jsx)$/,
         loader: BABEL_LOADER,
         include: path.resolve(__dirname, 'src/'),
-        // options: { plugins: [ require.resolve('react-refresh/babel') ] },
       },
     ],
   },
-  devServer: {
-    //hot: true,
-    //hotOnly: true,
-    //inline: false,
-    //liveReload: false
-  },
   plugins: [
     new HOT_MODULE_REPLACEMENT_PLUGIN(),
-    // new REACT_REFRESH_PLUGIN({ include: /\.(tsx|jsx)$/ }),
+    new REACT_REFRESH_PLUGIN({ include: /\.(tsx)$/ }),
     new DEFINE_PLUGIN({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     new PROVIDE_PLUGIN({ process: 'process/browser' }),
     new HTML_PLUGIN({ template: require.resolve('./public/index.html') }),
@@ -79,4 +76,5 @@ module.exports = () => ({
       typescript: { enabled: true, configFile: path.resolve(__dirname, 'tsconfig.json') },
     }),
   ],
+  devServer: { hot: true, liveReload: false },
 });
