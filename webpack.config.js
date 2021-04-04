@@ -66,7 +66,7 @@ module.exports = () => ({
   },
   plugins: [
     new HOT_MODULE_REPLACEMENT_PLUGIN(),
-    new REACT_REFRESH_PLUGIN({ include: /\.(tsx)$/ }),
+    new REACT_REFRESH_PLUGIN({ include: /\.(ts|tsx)$/ }),
     new DEFINE_PLUGIN({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     new PROVIDE_PLUGIN({ process: 'process/browser' }),
     new HTML_PLUGIN({ template: require.resolve('./public/index.html') }),
