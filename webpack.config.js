@@ -15,7 +15,6 @@ const POSTCSS_NORMALIZE = require('postcss-normalize');
 const STYLE_LOADER = require.resolve('style-loader');
 const FILE_LOADER = require.resolve('file-loader');
 const BABEL_LOADER = require.resolve('babel-loader');
-// const REACT_REFRESH = require('react-refresh/babel');
 const WEBPACK = require('webpack');
 const DEFINE_PLUGIN = WEBPACK.DefinePlugin;
 const PROVIDE_PLUGIN = WEBPACK.ProvidePlugin;
